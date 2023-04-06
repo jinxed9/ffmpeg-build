@@ -20,7 +20,7 @@ jobs:
       - name: build ffmpeg
         run: |
           while sleep 300; do echo "=====[ $SECONDS seconds still running ]====="; done &
-          SKIPINSTALL=yes VERBOSE=yes ./build-ffmpeg --build
+          SKIPINSTALL=yes VERBOSE=yes git update-index --chmod=+x ./build-ffmpeg --build
           kill %1
       - name: check shared library
         run: |
