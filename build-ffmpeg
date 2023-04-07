@@ -96,6 +96,8 @@ download() {
   else
     echo "$DOWNLOAD_FILE has already downloaded."
   fi
+  
+  echo "$DOWNLOAD_PATH/$TARGETDIR"
 
   make_dir "$DOWNLOAD_PATH/$TARGETDIR"
 
