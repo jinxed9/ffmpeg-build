@@ -124,6 +124,7 @@ download() {
 }
 
 download2() {
+  echo "Download 2..."
   # download url [filename[dirname]]
 
   DOWNLOAD_PATH="$PACKAGES"
@@ -162,8 +163,15 @@ download2() {
 
   make_dir "$DOWNLOAD_PATH/$TARGETDIR"
   
+  echo "$DOWNLOAD_PATH/$DOWNLOAD_FILE"
+  
   #move the downloaded file to the target dir
   mv "$DOWNLOAD_PATH/$DOWNLOAD_FILE" "$DOWNLOAD_PATH/$TARGETDIR"
+
+  for entry in "$DOWNLOAD_PATH/$TARGETDIR"/*
+  do
+   echo "$entry"
+  done
 
   if [[ "$DOWNLOAD_FILE" == *"patch"* ]]; then
     return
